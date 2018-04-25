@@ -8,7 +8,28 @@ public class Word {
     /** Miwok translation of the word */
     private String mMiwokTranslation;
 
+    /** Image Resource */
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
 
+    private static final int NO_IMAGE_PROVIDED = -1;
+
+    /**
+     * Contructor with 3 inputs
+     * @param defaultTranslation
+     * @param miwokTranslation
+     * @param imageResourceId
+     */
+    public Word(String defaultTranslation, String miwokTranslation, Integer imageResourceId) {
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        mImageResourceId = imageResourceId;
+    }
+
+    /**
+     * Constructor with 2 inputs
+     * @param defaultTranslation
+     * @param miwokTranslation
+     */
     public Word(String defaultTranslation, String miwokTranslation) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
@@ -26,5 +47,19 @@ public class Word {
      */
     public String getMiwokTranslation() {
         return mMiwokTranslation;
+    }
+
+    /**
+     * Get the Image Resource Id
+     */
+
+    public int getImageResourceId() { return mImageResourceId; }
+
+    /**
+     * Returns whether or not there is an image for this word
+     * @return
+     */
+    public boolean hasImage() {
+        return mImageResourceId != NO_IMAGE_PROVIDED;
     }
 }
