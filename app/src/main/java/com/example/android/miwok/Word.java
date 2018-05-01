@@ -13,26 +13,33 @@ public class Word {
 
     private static final int NO_IMAGE_PROVIDED = -1;
 
+    /** Audio reource ID for the word */
+    private int mAudioResourceId;
+
     /**
-     * Contructor with 3 inputs
+     * Contructor with 4 inputs
      * @param defaultTranslation
      * @param miwokTranslation
      * @param imageResourceId
+     * @param audioResourceId
      */
-    public Word(String defaultTranslation, String miwokTranslation, Integer imageResourceId) {
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         mImageResourceId = imageResourceId;
+        mAudioResourceId = audioResourceId;
     }
 
     /**
-     * Constructor with 2 inputs
+     * Constructor with 3 inputs
      * @param defaultTranslation
      * @param miwokTranslation
+     * @param audioResourceId
      */
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
     }
 
     /**
@@ -54,6 +61,12 @@ public class Word {
      */
 
     public int getImageResourceId() { return mImageResourceId; }
+
+    /**
+     * Get the Audio Resource Id
+     */
+
+    public int getAudioResourceId() { return mAudioResourceId; }
 
     /**
      * Returns whether or not there is an image for this word
