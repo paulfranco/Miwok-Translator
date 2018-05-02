@@ -95,11 +95,6 @@ public class PhrasesActivity extends AppCompatActivity {
                     mMediaPlayer.setOnCompletionListener(mOnCompletionListener);
                 }
 
-                MediaPlayer mMediaPlayer = MediaPlayer.create(PhrasesActivity.this, word.getAudioResourceId());
-                // Start the audio file
-                mMediaPlayer.start();
-                // setup a listener on the media player, so that we can stop and release the media player once the sounds has finished playing
-                mMediaPlayer.setOnCompletionListener(mOnCompletionListener);
             }
         });
     }
